@@ -8,6 +8,15 @@
   font-weight: 500;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 ul {
   list-style: none;
 }
@@ -21,6 +30,15 @@ ul {
   background-size: cover;
   background-position: center;
   z-index: -2;
+  animation: fade 1s;
+}
+.background::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 header {
   position: relative;
