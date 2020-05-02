@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 17px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+header {
+  position: relative;
+  padding: 30px 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.list p {
+  cursor: pointer;
+}
+
+.list .todo {
+  position: absolute;
+  top: 50%;
+
+  width: 500px;
+  background: rgba(35, 35, 35, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transition: 0.32s;
+  opacity: 0;
+  z-index: -1;
+}
+
+.list .todo .del {
+  cursor: pointer;
+}
+
+.list .todo li div:not(.del) {
+  width: 80%;
+}
+
+.list .top {
+  width: 100%;
+  height: 20px;
+  margin: 10px 0;
+}
+.list .todo_list {
+  margin-bottom: 60px;
+  margin-left: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.list .todo_list::-webkit-scrollbar {
+  width: 10px;
+  margin-right: 10px;
+}
+
+.list .todo_list::-webkit-scrollbar-thumb {
+  background: #2f2f2f;
+  border-radius: 10px;
+}
+
+.list .todo_list::-webkit-scrollbar-track {
+  background: grey;
+  border-radius: 10px;
+}
+
+.list .todo_list li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.list .exit {
+  position: relative;
+  float: right;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.list .exit > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 3px;
+  background: #333;
+}
+
+.list .exit > div:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.list .exit > div:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.list .todo input {
+  position: absolute;
+  width: 90%;
+  background: transparent;
+  border: none;
+  outline: none;
+  bottom: 10px;
+  left: 10px;
+}
+
+.list .todo input::placeholder {
+  color: #fff;
+}
+
+.user {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.user > input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 2px solid #a2a2a2;
+}
+
+.user .left {
+  width: 0;
+}
+
+.user .right {
+  width: 0;
+}
+
+.user p {
+  font-size: 24px;
+}
+
+.user > input:focus ~ .left {
+  width: 50%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transition: width 0.5s;
+  background: #d32f2f;
+}
+
+.user > input:focus ~ .right {
+  width: 50%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transition: width 0.5s;
+  background: #d32f2f;
+  z-index: 2;
+}
+
+.user > input::placeholder {
+  color: #fff;
+}
+
+.clock {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.clock > p {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.weather {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  text-align: center;
+}
